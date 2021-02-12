@@ -11,7 +11,9 @@ import replace from '@rollup/plugin-replace';
 
 export default {
   appIndex: 'index.html',
-  nodeResolve: true,
+  nodeResolve: {
+    exportConditions: ['development']
+  },
   plugins: [
     esbuildPlugin({ ts: true }),
     ...(process.env.NODE_ENV
